@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.row{
+    @apply flex flex-wrap py-8 px-4 items-center
+}
+.btn{
+    @apply  px-4 py-2  rounded-lg text-white
+}
+.category-image{
+    height: 200px;
+}
+.category-image2{
+    height: 300px;
+}

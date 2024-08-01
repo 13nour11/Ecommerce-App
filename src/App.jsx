@@ -137,7 +137,7 @@ function App() {
       </h1>
       {/* </div> */}
 
-      <div className=" text-slate-600 h-dvh ">
+      <div className=" text-slate-600 h-100 ">
         <h2 className='font-semibold text-4xl pt-3'>OOP!</h2>
         <h1 className='font-semibold text-5xl py-4'>You're Offline !</h1>
         <div className="image flex items-center justify-center my-10">

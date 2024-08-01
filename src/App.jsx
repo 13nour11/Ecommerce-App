@@ -37,7 +37,7 @@ import VerifyCode from './components/VerifyCode/VerifyCode'
 import AccountPassword from './components/AccountPassword/AccountPassword'
 import SubCategory from './components/SubCategory/SubCategory'
 
-
+import offlineImage from './assets/images/offline.png'
 
 let query = new QueryClient();
 
@@ -130,12 +130,22 @@ function App() {
     </Online>
 
     <Offline >
-      {/* <div className='mx-auto text-center'> */}
+      {/* <div className='mx-auto text-center'> 
       <h1 className='bg-slate-50 border-red-500 text-red-700 text-4xl font-semibold border p-10 py-20 rounded'> 
-      {/* fixed top-16 left-0  */}
+       fixed top-16 left-0  
       You are offline (surprise!)
       </h1>
       {/* </div> */}
+
+      <div className=" text-slate-600 h-dvh ">
+        <h2 className='font-semibold text-4xl pt-3'>OOP!</h2>
+        <h1 className='font-semibold text-5xl py-4'>You're Offline !</h1>
+        <div className="image flex items-center justify-center my-10">
+          <img src={offlineImage} alt="" className='block w-fit'/>
+        </div>
+        <p>Unfortunately the website is down for a bit of maintanace right now. We will be online as soon as possible.</p>
+        <p>Please, check again the connection in a little while, Thank you!</p>
+      </div>
       
     </Offline>
   </div>

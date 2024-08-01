@@ -81,7 +81,8 @@ export default function Cart() {
 {isLoading?
   <div className='py-8 w-full flex justify-center'>
       <BeatLoader color="green" />
-  </div>:
+  </div>:<>
+  {cardDetails?.products && cardDetails.products.length>0?
   <table className="w-3/4 mx-auto my-6 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   <thead className="text-xs text-gray-600 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
@@ -141,6 +142,20 @@ export default function Cart() {
     
   </tbody>
 </table>
+:
+<div id="alert-border-5" className="my-10 flex flex-col items-center w-1/2 mx-auto p-4 rounded border-b-4 border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-600" role="alert">
+
+<div className="ms-3 text-3xl  font-medium text-gray-600 dark:text-gray-300">
+  There is no products 
+</div>
+</div>
+  }
+  
+  
+  
+  </>
+  
+  
 }
   
   <button onClick={()=>clearCart()} type="button" className="text-green-600 hover:text-white border border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-600">

@@ -19,19 +19,19 @@ export default function AllOrders() {
     // getUserOrders
     async function getUserOrders(userId){
       let {data} = await axios.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`);
-      console.log(data?.data);
+      console.log(data);
       setallOrderDetails(data?.data);
     }
 
     useEffect(()=>{
-      // if(useId !== null){
-      //   getUserOrders(userId);
-      // }
+      if(useId !== null){
+        getUserOrders(userId);
+      }
       // getAllOrders()
-      getUserOrders(userId);
+      // getUserOrders(userId);
 
 
-    },[userId]);//userId
+    },[]);//userId
 
   return <>
   <Helmet>
@@ -46,6 +46,7 @@ export default function AllOrders() {
   {/* {orderDetails?.map((order)=><div className='w-1/4' key={order?.id}>
 
   </div>)} */}
+  {orderDetails && orderDetails.length>0 ?
   <table className="w-3/4 mx-auto my-6 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   <thead className="text-xs text-gray-600 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
@@ -93,7 +94,15 @@ export default function AllOrders() {
     )}
     
   </tbody>
-</table>
+</table> 
+:
+<div id="alert-border-5" className="flex flex-col items-center w-1/2 mx-auto p-4 rounded border-b-4 border-gray-300 bg-gray-50 dark:bg-gray-800 dark:border-gray-600" role="alert">
+
+<div className="ms-3 text-3xl  font-medium text-gray-600 dark:text-gray-300">
+  There is no orders 
+</div>
+</div>
+  }
 
   </div>
 

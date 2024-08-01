@@ -36,7 +36,7 @@ export default function CheckOut() {
         `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}/`,
         { shippingAddress: address },
         {
-          // params: { url: 'http://localhost:5173' },
+          params: { url: 'http://localhost:5173' },
           headers: {
             token: localStorage.getItem('userToken'),
           },

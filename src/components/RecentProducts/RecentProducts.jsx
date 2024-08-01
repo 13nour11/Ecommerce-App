@@ -98,14 +98,14 @@ export default function RecentProducts() {
         setLoading(false);
         toast.success(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
       else{
         setLoading(false);
         toast.error(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
 
@@ -126,7 +126,7 @@ export default function RecentProducts() {
         // setLoading(false);
         toast.success(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
         // setheartColor(prevState => ({ ...prevState, [productId]: true }));
 
@@ -135,7 +135,7 @@ export default function RecentProducts() {
         // setLoading(false);
         toast.error(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
 
@@ -146,7 +146,7 @@ export default function RecentProducts() {
     <div className="row gap-5">
       {data?.data.data.map((product)=> 
       // box-shadow: 1px 1px 10px #4fa74f;
-        <div className='w-1/6 px-4  py-3 hover:shadow-[1px_1px_10px_#4fa74f] transition-all duration-500 cursor-pointer group' key={product.id} >
+        <div className='w-1/6 px-4 rounded py-3 hover:shadow-[1px_1px_10px_#4fa74f] transition-all duration-500 cursor-pointer group' key={product.id} >
           <div className="product py-4 ">
           <Link to={`/productdetails/${product.id}/${product.category.name}`}>
             <img src={product.imageCover} alt={product.title} className='w-full' />

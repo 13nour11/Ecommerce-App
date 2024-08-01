@@ -167,7 +167,7 @@ export default function ProductDetails() {
             </span>
           </div>
           <div className="flex justify-center items-center">
-          <button className="btn mt-3 w-2/3 bg-green-500">+ Add To Cart.</button>
+          <button className="btn mt-3 w-2/3 bg-green-500" onClick={()=>{addProduct(productDetails?.id)}}>+ Add To Cart.</button>
           </div>
           
     </div>

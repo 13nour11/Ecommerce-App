@@ -48,12 +48,20 @@ export default function Addresses() {
 
   async function addUserAdress(formsValue) {
     const response = await addAdress(formsValue.name, formsValue.details, formsValue.phone, formsValue.city);
+    console.log(response.data.data);
+    
     if (response?.status === "success") {
-      toast.success(response?.message, { duration: 1000 });
+      toast.error(response?.data?.message, { duration: 1000 });
+
+      setaddressDetails(response?.data.data);
+      
       setshowForm(false);
       getLoggedAddressesUser(); // Refresh the addresses after adding a new one
+
     } else {
-      toast.error(response?.message, { duration: 1000 });
+      toast.success(response?.data?.message, { duration: 1000 });
+      setshowForm(false);
+      
     }
   }
 
@@ -79,7 +87,7 @@ export default function Addresses() {
 
   useEffect(() => {
     getLoggedAddressesUser();
-  }, []);
+  }, [addressDetails]);
 
   return (
     <>
@@ -212,22 +220,28 @@ export default function Addresses() {
             </div>
           )}
 
+          <div className="flex flex-col justify-between items-between">
           <button
             type="submit"
-            className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-lg w-full sm:w-auto px-8 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            className="my-5 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-lg w-full sm:w-auto px-8 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
             Ok
           </button>
+          
+          
+          </div>
+
         </form>
       </div>
 
       <button
         onClick={() => setshowForm(true)}
         type="button"
-        className="px-9 my-5 text-green-600 hover:text-white border border-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-700"
+        className="w-1/3 px-9 my-5 text-green-600 hover:text-white border border-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-700"
       >
-        Add Address
+        Add New Address
       </button>
+      
     </>
   );
 }

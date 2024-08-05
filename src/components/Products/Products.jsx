@@ -38,14 +38,14 @@ export default function Products() {
         setLoading(false);
         toast.success(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
       else{
         setLoading(false);
         toast.error(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
 
@@ -64,7 +64,7 @@ export default function Products() {
         // setLoading(false);
         toast.success(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
         // setheartColor(prevState => ({ ...prevState, [productId]: true }));
 
@@ -73,7 +73,7 @@ export default function Products() {
         // setLoading(false);
         toast.error(response.data.message ,{
           duration: 1000,
-          position: 'bottom-left'
+          // position: 'bottom-left'
         });
       }
 

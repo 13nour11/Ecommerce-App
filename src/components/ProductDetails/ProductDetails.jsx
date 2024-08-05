@@ -86,14 +86,14 @@ export default function ProductDetails() {
       // setIsLoading(false);
       toast.success(response.data.message ,{
         duration: 1000,
-        position: 'bottom-left'
+        // position: 'bottom-left'
       });
     }
     else{
       setIsLoading(false);
       toast.error(response.data.message ,{
         duration: 1000,
-        position: 'bottom-left'
+        // position: 'bottom-left'
       });
     }
 
@@ -114,7 +114,7 @@ export default function ProductDetails() {
       // setLoading(false);
       toast.success(response.data.message ,{
         duration: 1000,
-        position: 'bottom-left'
+        // position: 'bottom-left'
       });
       // setheartColor(prevState => ({ ...prevState, [productId]: true }));
 
@@ -123,7 +123,7 @@ export default function ProductDetails() {
       // setLoading(false);
       toast.error(response.data.message ,{
         duration: 1000,
-        position: 'bottom-left'
+        // position: 'bottom-left'
       });
     }
 

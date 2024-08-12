@@ -59,7 +59,6 @@ export default function Register() {
         
     }
 
-
     let formik = useFormik({
       initialValues:{
         email:'',

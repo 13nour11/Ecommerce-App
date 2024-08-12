@@ -44,6 +44,7 @@ let query = new QueryClient();
 let x = createBrowserRouter([
   {path:'',element:<Layout/> , children:[
     {index:true, element: <ProtectedRoute><Home/></ProtectedRoute>},
+    {path:'Ecommerce-App', element: <ProtectedRoute><Home/></ProtectedRoute>},
 
     {path:'categories', element: <ProtectedRoute><Categories /></ProtectedRoute>},
     {path:'subcat', element: <ProtectedRoute><SubCategory /></ProtectedRoute>},
